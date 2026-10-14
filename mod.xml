@@ -1,0 +1,5 @@
+<Mod 
+  name="DunkTales in gold room" 
+  description="Auto-pickup gold room but instead you have to wath DunkTales at around 0.3 fps" 
+  request_no_api_restrictions="0" >
+</Mod>

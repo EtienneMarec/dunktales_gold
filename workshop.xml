@@ -1,0 +1,25 @@
+<Mod
+		name="DunkTales in gold room (janky)"
+		description="Auto-pickup gold room but instead you have to listen to DunkTales and watch the clip at around 0.3 fps
+
+					The janky parts :
+
+					As you may know, there is no tool in noita to play video files, this is why you get to see only 54 frames of the video (times just right for a good karaoke)
+
+					The game doesn't pause when doing so, you might die, but gold is often a safe place (if you hear that you'r taking damage just mod restart, it will stop the music)
+
+					Taking frames from a video makes'em a bit blurry sometimes
+
+					If gold is shifted you still get the money
+
+					Sometimes, if the chunck isn't fully loaded in there is still a bit of gold left in it
+
+					Trigers only once per game
+
+
+					Link to the music : https://youtu.be/xtlPywRdo6M?si=b0nfGcOPw7ZJzCqg
+					Credits to Shankmo for it"
+					
+		tags="audio,funny,streaming integration,gameplay"
+	> 
+</Mod>
