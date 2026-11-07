@@ -1,33 +1,33 @@
--- On enregistre le fichier GUIDs
+-- Register the GUIDs file
 function OnModPreInit()
     ModRegisterAudioEventMappings("mods/dunktales_gold/GUIDs.txt")
 end
 
--- Pour être sûr, on imprime aussi dans la console quand vous apparaissez
+-- When the player spawns, attach the biome checker (once per run)
 function OnPlayerSpawned(player_entity)
     if not GameHasFlagRun("musiquedunk_lancee") then
-        -- On attache UNIQUEMENT le composant script qui va scruter le biome
+        -- ONLY attach the script component that watches the biome
         EntityAddComponent2(player_entity, "LuaComponent", {
             script_source_file = "mods/dunktales_gold/files/music_checker.lua",
-            execute_every_n_frame = 1 -- INDISPENSABLE POUR AFFICHER DU TEXTE/IMAGES (60FPS)
+            execute_every_n_frame = 1 -- REQUIRED TO DISPLAY TEXT/IMAGES (60FPS)
         })
 
         GameAddFlagRun("musiquedunk_lancee")
     end
 end
 
--- GESTION DE L'AFFICHAGE ET DE LA SYNCHRO (JEU + PAUSE)
+-- DISPLAY AND SYNC HANDLING (GAMEPLAY + PAUSE)
 local dunktales_gui = nil
-local music_duration_frames = 192 * 60 -- 3 minutes et 12 secondes à 60 FPS
+local music_duration_frames = 192 * 60 -- 3 minutes 12 seconds at 60 FPS
 
 function OnWorldPreUpdate()
-    -- On nettoie systématiquement le GUI de pause à chaque frame de jeu
-    -- Cela évite que la dernière image reste bloquée à l'écran après la fin ou après avoir quitté la pause
+    -- Always clear the pause GUI on every game frame
+    -- This keeps the last image from staying stuck on screen after the end or after leaving the pause menu
     if dunktales_gui ~= nil then
         GuiStartFrame(dunktales_gui)
     end
 
-    -- AFFICHAGE PENDANT LE JEU
+    -- DISPLAY DURING GAMEPLAY
     if GameHasFlagRun("playing_dunktales") then
         local target_frame = tonumber(GlobalsGetValue("dunktales_target_frame", "0"))
         if target_frame > 0 then
