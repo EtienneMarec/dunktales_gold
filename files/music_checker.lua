@@ -45,7 +45,7 @@ if target_frame > 0 then
         })
 
         GlobalsSetValue("dunktales_target_frame", "0")
-        GamePrint("Musique terminée, vous pouvez reprendre l'exploration !")
+        GamePrint("Music over, you can go back to exploring!")
     else
         -- PENDANT LE BLOCAGE : On force l'immobilité
         local controls = EntityGetFirstComponent(entity_id, "ControlsComponent")
@@ -102,6 +102,6 @@ if is_gold_biome then
         GlobalsSetValue("dunktales_pause_frames", "0")
 
         GameAddFlagRun("playing_dunktales")
-        GamePrint("Biome Gold : Magie en cours... Vous êtes immobilisé pour 3 minutes !")
+        GamePrint("Gold biome: magic in progress... You are frozen for 3 minutes!")
     end
 end

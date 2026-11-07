@@ -23,7 +23,6 @@ The slideshow keeps going while the game is paused, and the timer accounts for t
 - If the gold is shifted (e.g. by Fungal Shift), you still get the money.
 - If a chunk isn't fully loaded, a bit of gold may be left behind.
 - It triggers only once per run.
-- In-game messages are in French.
 
 ## Installation
 
